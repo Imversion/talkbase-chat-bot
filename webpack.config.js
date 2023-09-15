@@ -1,5 +1,5 @@
 const webpack = require('webpack');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const pkg = require('./package.json');
 const path = require('path');
 const libraryName= pkg.name;
@@ -7,22 +7,23 @@ module.exports = {
     entry: path.join(__dirname, "./src/index.js"),
     output: {
         path: path.join(__dirname, './dist'),
-        filename: 'myUnflappableComponent.js',
+        filename: 'talkbase-chat-bot.js',
         library: libraryName,
         libraryTarget: 'umd',
         publicPath: '/dist/',
         umdNamedDefine: true
     },
     plugins: [
-        new ExtractTextPlugin({
-            filename: 'myUnflappableComponent.css',
-        }),
+        new MiniCssExtractPlugin()
+        // new MiniCssExtractPlugin({
+        //     filename: 'talkbase-chat-bot.css',
+        // }),
     ],
-    node: {
-      net: 'empty',
-      tls: 'empty',
-      dns: 'empty'
-    },
+    // node: {
+    //   net: 'empty',
+    //   tls: 'empty',
+    //   dns: 'empty'
+    // },
     module: {
         rules : [
             {
@@ -40,14 +41,8 @@ module.exports = {
             ]
         },
         {
-            test: /\.*css$/,
-            use : ExtractTextPlugin.extract({
-                fallback : 'style-loader',
-                use : [
-                    'css-loader',
-                    'sass-loader'
-                ]
-            })
+            test: /\.css$/i,
+            use: [MiniCssExtractPlugin.loader, "css-loader"],
         },
         {
             test: /\.(js|jsx)$/,

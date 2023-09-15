@@ -1,0 +1,540 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+@font-face {
+  font-family: "SFUIText";
+  src: url(/dist/3891cf449d0d4808a8b5.otf)
+    format("opentype");
+  font-weight: 400; /* Normal weight */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SFUIText";
+  src: url(/dist/f147e8e52dab4a416362.otf)
+    format("opentype");
+  font-weight: 300; /* Light weight */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SFUIText";
+  src: url(/dist/5cbee4da2406dc1e821f.otf)
+    format("opentype");
+  font-weight: 600; /* Semi-Bold weight */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SFUIText";
+  src: url(/dist/3891cf449d0d4808a8b5.otf)
+    format("opentype");
+  font-weight: 400; /* Normal weight */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SFUIText";
+  src: url(/dist/84964764bedcaf09c239.otf)
+    format("opentype");
+  font-weight: 700; /* Bold weight */
+  font-style: normal;
+}
+
+.chatbot-area {
+  display: flex;
+  align-items: center;
+  vertical-align: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  padding-right: 20px;
+}
+
+.chatbot-container {
+  width: 400px;
+  height: 600px;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding-right: 0px;
+}
+
+.chatbot-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: #2c3e50;
+  font-family: "SFUIText";
+}
+
+.profile-pic {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.header-info h2 {
+  margin: 0;
+  font-size: 18px;
+  font-family: "SFUIText";
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.online-indicator {
+  width: 8px;
+  height: 8px;
+  background-color: #2ecc71;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.message-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  height: 500px; /* Set a fixed height, adjust as needed */
+  overflow-y: scroll !important; /* Make it scrollable vertically */
+  border: 1px solid #e0e0e0;
+}
+
+/* Style the scrollbar for webkit browsers (Chrome, Safari) */
+.message-container::-webkit-scrollbar {
+  width: 4px;
+  background-color: #f1f1f100; /* This will ensure the track is visible */
+}
+
+.message-container::-webkit-scrollbar-thumb {
+  background-color: #cbc9c9;
+  border-radius: 4px;
+}
+
+.message-container::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+.chatbot-input-area {
+  position: relative; /* Relative positioning to place the send button inside */
+  padding: 10px 20px;
+  border: none;
+  scrollbar-width: none !important;
+
+}
+
+.chatbot-input-area textarea {
+  width: 100%;
+  padding: 10px 50px 0px 0px; /* Extra padding on the right for the send button */
+  border: none;
+  background-color: transparent; /* Transparent background */
+  font-size: 15px;
+  font-family: "SFUIText";
+  transition: border-color 0.3s; /* Smooth transition for interactions */
+  outline: none;
+  resize: none;
+  box-sizing: border-box;
+  scrollbar-width: none !important; /* Remove scrollbar */
+}
+
+.chatbot-input-area textarea::-webkit-scrollbar {
+  display: none;
+}
+
+
+.chatbot-input-area button {
+  position: absolute; /* Absolute positioning inside the input area */
+  right: 20px; /* Position it on the right */
+  top: 50%; /* Center it vertically */
+  transform: translateY(-50%); /* Vertical centering adjustment */
+  background-color: transparent;
+  border: none;
+  font-size: 24px;
+  font-family: "SFUIText";
+  cursor: pointer;
+  transition: color 0.3s; /* Smooth transition for interactions */
+  outline: none;
+  color: #000000; /* Use the primary color from the theme */
+}
+
+.chatbot-input-area button:hover {
+  color: #2c3e50; /* Slightly darker color on hover */
+}
+
+/* Add/Update these styles in ChatbotUI.css */
+
+/* Add/Update these styles in ChatbotUI.css */
+
+/* Add/Update these styles in ChatbotUI.css */
+
+/* Add/Update these styles in ChatbotUI.css */
+
+.loading-indicator {
+  height: 4px;
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes pulseMove {
+  0% {
+    left: -50%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+@keyframes pulseWidth {
+  0%,
+  100% {
+    width: 50%;
+  }
+  50% {
+    width: 100%;
+  }
+}
+
+.theme-editor {
+  width: 450px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.pre {
+  background-color: #f5f5f5;
+  padding: 10px;
+  border-radius: 5px;
+  overflow-x: auto;
+}
+
+.suggested-questions {
+  display: flex;
+  align-items: flex-end;
+  justify-content: right;
+  align-items: right;
+  flex-direction: column;
+  gap: 5px;
+  margin: 10px 10px;
+}
+
+.suggested-question {
+  padding: 8px 12px;
+  margin-right: 12px;
+  border-radius: 12px;
+  border-top-right-radius: 2px;
+  font-size: 0.8rem; /* Smaller font size */
+  font-family: "SFUIText";
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+  cursor: pointer; /* 1. Change the cursor */
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Add transform to the transition */
+}
+
+.suggested-question:hover {
+  background-color: #e0e0e0;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* 3. Add a box shadow */
+  transform: scale(1.05); /* 5. Slightly scale the element */
+}
+
+.suggested-question:hover {
+  box-shadow: 0 px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.icon-button {
+  font-size: 2.5rem;
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  outline: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer; /* Optional: to indicate it's clickable */
+}
+
+.suggested-question-title {
+  font-size: 12px; /* Adjust as needed */
+  padding-right: 8px;
+  opacity: 0.7;
+  font-family:'SFUIText';
+  font-weight: 600; /* Slight transparency for subtlety */
+}
+
+.send-button {
+  font-family: 'SFUIText';
+  font-size: 14px !important;
+  padding: 10px 12px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 50%; /* Square-ish rounded edges */
+  outline: none;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+  /* Add a subtle shadow */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: white; /* Assuming the text color inside the button is white */
+}
+
+.send-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.2;
+}
+
+/* Hover effect: Add shine and enhance the shadow */
+.send-button:hover {/* Slightly brighter gradient for shine */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Active (click) effect: Depress the shadow */
+.send-button:active {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Lighter shadow for a pressed effect */
+}
+
+.chat-bubble {
+    display: flex;
+    padding: 0px 14px;
+    border-radius: 12px; /* Slightly larger border-radius for a softer look */
+    max-width: 80%;
+    word-wrap: break-word;
+    margin-bottom: 15px; /* Increased margin-bottom for better spacing between chat bubbles */
+    white-space: pre-line;
+    position: relative;
+    margin: 14px;
+    letter-spacing: 0.10px;
+    font-size: 14px;
+    font-family:'SFUIText', sans-serif;
+    line-height: 1.5; /* Increased line height for better readability */
+    box-shadow: 0 1px px rgba(0, 0, 0, 0.1); /* Added a subtle shadow for depth */
+}
+
+.chat-bubble.user {
+    align-self: flex-start; /* Align user messages to the right */
+    border-top-left-radius: 2px;
+}
+
+.chat-bubble.bot {
+    align-self: flex-end; /* Align bot messages to the left */
+    border-top-right-radius: 2px;
+}
+
+.chat-bubble.link {
+    align-self: flex-end; /* Align bot messages to the left */
+    padding: 0px 10px;
+    padding-bottom: 4px;
+    margin-right: 16px;
+    border-top-right-radius: 2px;
+    
+  
+}
+
+
+
+.sender-name {
+    font-size: 12px; /* Adjust as needed */
+    position: absolute;
+    top: -20px; /* Position above the chat bubble */
+    opacity: 0.7;
+    font-family:'SFUIText';
+    font-weight: 600; /* Slight transparency for subtlety */
+}
+
+.chat-bubble.user .sender-name {
+    left: 0; /* Align to the right edge for user messages */
+}
+
+.chat-bubble.bot .sender-name {
+    right: 0; /* Align to the left edge for bot messages */
+}
+
+.link-preview {
+    display: flex;
+    position: relative;
+    justify-content: flex-start;
+    flex-direction: column; /* Stack children vertically */
+    align-items: flex-end;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    max-width: 72%; 
+    height: 275px !important;
+    transition: box-shadow 0.3s ease;
+    overflow:hidden;
+    flex-shrink: 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+   
+  
+}
+
+.link-preview:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transform: translateY(-3px); /* This will move the element slightly upwards on hover */
+}
+
+.link-preview img {
+    width: 100%;
+    height: 50%;
+    border-radius: 12px;
+    border-top-right-radius: 2px;
+    margin-bottom: 10px;
+    margin-top: 12px;
+    object-fit:cover;
+    
+}
+
+.link-preview-title {
+    font-size: 14px;
+    font-family:'SFUIText';
+    line-height: 1.4; /* Adjust for readability */
+    margin: -4px -4px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Show max 2 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    width: 100%; /* Full width of the container */
+    text-align: left;
+}
+
+
+.link-preview-url {
+    color: #0077cc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Clip the URL with an ellipsis if it's too long */
+    width: 100%; /* Full width of the container */
+    text-align: left;
+    margin: 4px -4px;
+    font-size: 14px;
+    font-family:'SFUIText';
+    line-height: 1.2; /* Adjust for readability */
+
+}
+
+.link-preview-url:hover {
+    color: #0055aa;
+}
+
+.link-preview-description {
+    line-height: 1.2; /* Adjust for readability */
+    display: -webkit-box;
+    font-size: 14px;
+    -webkit-line-clamp: 3; /* Show max 3 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    width: 100%; /* Full width of the container */
+    margin: 0px -8px;
+    padding-top: 4px;
+    padding-right: 4px;
+
+    font-family:'SFUIText';
+
+}
+
+
+
+/* General styles for body for better visualization */
+body {
+    line-height: 1.6;
+    padding: 20px;
+    font-family:'SFUIText';
+  }
+  
+  /* Styles for tables */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: -20px 0;
+    font-family:'SFUIText';
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 5px 5px;
+    text-align: left;
+    font-family:'SFUIText';
+  }
+  
+  th {
+    font-weight: 600;
+    font-family:'SFUIText';
+  }
+
+  
+  /* Styles for bullet points */
+  ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin: 0px 0px;
+    font-family:'SFUIText';
+  }
+  
+  li {
+    margin-bottom: 0px;
+    font-size: 16px;
+    font-family:'SFUIText';
+  }
+  
+  /* If you want to add a specific color or style to links */
+  a {
+    color: #007BFF;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-family:'SFUIText';
+  }
+  
+  a:hover {
+    color: #0056b3;
+  }
+  
+/* Starting state of the animation */
+.chat-bubble-animation-enter, .chat-bubble-animation-appear {
+    opacity: 0;
+    transform: translateY(-20px); 
+
+
+  }
+  
+  /* Ending state of the animation */
+  .chat-bubble-animation-enter-active, .chat-bubble-animation-appear-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 200ms ease-in-out, transform 200ms ease-in-out;
+
+  }
+  
+

@@ -5,7 +5,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bot.js',
-    library: 'talkbase-embedded-chat-bot',
+    library: 'talkbase-chat-bot',
     libraryTarget: 'umd',
   },
   module: {

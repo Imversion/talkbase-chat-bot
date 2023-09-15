@@ -1,0 +1,214 @@
+.chat-bubble {
+    display: flex;
+    padding: 0px 14px;
+    border-radius: 12px; /* Slightly larger border-radius for a softer look */
+    max-width: 80%;
+    word-wrap: break-word;
+    margin-bottom: 15px; /* Increased margin-bottom for better spacing between chat bubbles */
+    white-space: pre-line;
+    position: relative;
+    margin: 14px;
+    letter-spacing: 0.10px;
+    font-size: 14px;
+    font-family:'SFUIText', sans-serif;
+    line-height: 1.5; /* Increased line height for better readability */
+    box-shadow: 0 1px px rgba(0, 0, 0, 0.1); /* Added a subtle shadow for depth */
+}
+
+.chat-bubble.user {
+    align-self: flex-start; /* Align user messages to the right */
+    border-top-left-radius: 2px;
+}
+
+.chat-bubble.bot {
+    align-self: flex-end; /* Align bot messages to the left */
+    border-top-right-radius: 2px;
+}
+
+.chat-bubble.link {
+    align-self: flex-end; /* Align bot messages to the left */
+    padding: 0px 10px;
+    padding-bottom: 4px;
+    margin-right: 16px;
+    border-top-right-radius: 2px;
+    
+  
+}
+
+
+
+.sender-name {
+    font-size: 12px; /* Adjust as needed */
+    position: absolute;
+    top: -20px; /* Position above the chat bubble */
+    opacity: 0.7;
+    font-family:'SFUIText';
+    font-weight: 600; /* Slight transparency for subtlety */
+}
+
+.chat-bubble.user .sender-name {
+    left: 0; /* Align to the right edge for user messages */
+}
+
+.chat-bubble.bot .sender-name {
+    right: 0; /* Align to the left edge for bot messages */
+}
+
+.link-preview {
+    display: flex;
+    position: relative;
+    justify-content: flex-start;
+    flex-direction: column; /* Stack children vertically */
+    align-items: flex-end;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    max-width: 72%; 
+    height: 275px !important;
+    transition: box-shadow 0.3s ease;
+    overflow:hidden;
+    flex-shrink: 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+   
+  
+}
+
+.link-preview:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transform: translateY(-3px); /* This will move the element slightly upwards on hover */
+}
+
+.link-preview img {
+    width: 100%;
+    height: 50%;
+    border-radius: 12px;
+    border-top-right-radius: 2px;
+    margin-bottom: 10px;
+    margin-top: 12px;
+    object-fit:cover;
+    
+}
+
+.link-preview-title {
+    font-size: 14px;
+    font-family:'SFUIText';
+    line-height: 1.4; /* Adjust for readability */
+    margin: -4px -4px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Show max 2 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    width: 100%; /* Full width of the container */
+    text-align: left;
+}
+
+
+.link-preview-url {
+    color: #0077cc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Clip the URL with an ellipsis if it's too long */
+    width: 100%; /* Full width of the container */
+    text-align: left;
+    margin: 4px -4px;
+    font-size: 14px;
+    font-family:'SFUIText';
+    line-height: 1.2; /* Adjust for readability */
+
+}
+
+.link-preview-url:hover {
+    color: #0055aa;
+}
+
+.link-preview-description {
+    line-height: 1.2; /* Adjust for readability */
+    display: -webkit-box;
+    font-size: 14px;
+    -webkit-line-clamp: 3; /* Show max 3 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    width: 100%; /* Full width of the container */
+    margin: 0px -8px;
+    padding-top: 4px;
+    padding-right: 4px;
+
+    font-family:'SFUIText';
+
+}
+
+
+
+/* General styles for body for better visualization */
+body {
+    line-height: 1.6;
+    padding: 20px;
+    font-family:'SFUIText';
+  }
+  
+  /* Styles for tables */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: -20px 0;
+    font-family:'SFUIText';
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 5px 5px;
+    text-align: left;
+    font-family:'SFUIText';
+  }
+  
+  th {
+    font-weight: 600;
+    font-family:'SFUIText';
+  }
+
+  
+  /* Styles for bullet points */
+  ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin: 0px 0px;
+    font-family:'SFUIText';
+  }
+  
+  li {
+    margin-bottom: 0px;
+    font-size: 16px;
+    font-family:'SFUIText';
+  }
+  
+  /* If you want to add a specific color or style to links */
+  a {
+    color: #007BFF;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-family:'SFUIText';
+  }
+  
+  a:hover {
+    color: #0056b3;
+  }
+  
+/* Starting state of the animation */
+.chat-bubble-animation-enter, .chat-bubble-animation-appear {
+    opacity: 0;
+    transform: translateY(-20px); 
+
+
+  }
+  
+  /* Ending state of the animation */
+  .chat-bubble-animation-enter-active, .chat-bubble-animation-appear-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 200ms ease-in-out, transform 200ms ease-in-out;
+
+  }
+  

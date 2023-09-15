@@ -1,0 +1,310 @@
+@font-face {
+  font-family: "SFUIText";
+  src: url("/public/assets/fonts/SFUIText/SFUIText-Regular.otf")
+    format("opentype");
+  font-weight: 400; /* Normal weight */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SFUIText";
+  src: url("/public/assets/fonts/SFUIText/SFUIText-Light.otf")
+    format("opentype");
+  font-weight: 300; /* Light weight */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SFUIText";
+  src: url("/public/assets/fonts/SFUIText/SFUIText-Semibold.otf")
+    format("opentype");
+  font-weight: 600; /* Semi-Bold weight */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SFUIText";
+  src: url("/public/assets/fonts/SFUIText/SFUIText-Regular.otf")
+    format("opentype");
+  font-weight: 400; /* Normal weight */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SFUIText";
+  src: url("/public/assets/fonts/SFUIText/SFUIText-Bold.otf")
+    format("opentype");
+  font-weight: 700; /* Bold weight */
+  font-style: normal;
+}
+
+.chatbot-area {
+  display: flex;
+  align-items: center;
+  vertical-align: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  padding-right: 20px;
+}
+
+.chatbot-container {
+  width: 400px;
+  height: 600px;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding-right: 0px;
+}
+
+.chatbot-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: #2c3e50;
+  font-family: "SFUIText";
+}
+
+.profile-pic {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.header-info h2 {
+  margin: 0;
+  font-size: 18px;
+  font-family: "SFUIText";
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.online-indicator {
+  width: 8px;
+  height: 8px;
+  background-color: #2ecc71;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.message-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  height: 500px; /* Set a fixed height, adjust as needed */
+  overflow-y: scroll !important; /* Make it scrollable vertically */
+  border: 1px solid #e0e0e0;
+}
+
+/* Style the scrollbar for webkit browsers (Chrome, Safari) */
+.message-container::-webkit-scrollbar {
+  width: 4px;
+  background-color: #f1f1f100; /* This will ensure the track is visible */
+}
+
+.message-container::-webkit-scrollbar-thumb {
+  background-color: #cbc9c9;
+  border-radius: 4px;
+}
+
+.message-container::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+.chatbot-input-area {
+  position: relative; /* Relative positioning to place the send button inside */
+  padding: 10px 20px;
+  border: none;
+  scrollbar-width: none !important;
+
+}
+
+.chatbot-input-area textarea {
+  width: 100%;
+  padding: 10px 50px 0px 0px; /* Extra padding on the right for the send button */
+  border: none;
+  background-color: transparent; /* Transparent background */
+  font-size: 15px;
+  font-family: "SFUIText";
+  transition: border-color 0.3s; /* Smooth transition for interactions */
+  outline: none;
+  resize: none;
+  box-sizing: border-box;
+  scrollbar-width: none !important; /* Remove scrollbar */
+}
+
+.chatbot-input-area textarea::-webkit-scrollbar {
+  display: none;
+}
+
+
+.chatbot-input-area button {
+  position: absolute; /* Absolute positioning inside the input area */
+  right: 20px; /* Position it on the right */
+  top: 50%; /* Center it vertically */
+  transform: translateY(-50%); /* Vertical centering adjustment */
+  background-color: transparent;
+  border: none;
+  font-size: 24px;
+  font-family: "SFUIText";
+  cursor: pointer;
+  transition: color 0.3s; /* Smooth transition for interactions */
+  outline: none;
+  color: #000000; /* Use the primary color from the theme */
+}
+
+.chatbot-input-area button:hover {
+  color: #2c3e50; /* Slightly darker color on hover */
+}
+
+/* Add/Update these styles in ChatbotUI.css */
+
+/* Add/Update these styles in ChatbotUI.css */
+
+/* Add/Update these styles in ChatbotUI.css */
+
+/* Add/Update these styles in ChatbotUI.css */
+
+.loading-indicator {
+  height: 4px;
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes pulseMove {
+  0% {
+    left: -50%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+@keyframes pulseWidth {
+  0%,
+  100% {
+    width: 50%;
+  }
+  50% {
+    width: 100%;
+  }
+}
+
+.theme-editor {
+  width: 450px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.pre {
+  background-color: #f5f5f5;
+  padding: 10px;
+  border-radius: 5px;
+  overflow-x: auto;
+}
+
+.suggested-questions {
+  display: flex;
+  align-items: flex-end;
+  justify-content: right;
+  align-items: right;
+  flex-direction: column;
+  gap: 5px;
+  margin: 10px 10px;
+}
+
+.suggested-question {
+  padding: 8px 12px;
+  margin-right: 12px;
+  border-radius: 12px;
+  border-top-right-radius: 2px;
+  font-size: 0.8rem; /* Smaller font size */
+  font-family: "SFUIText";
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+  cursor: pointer; /* 1. Change the cursor */
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Add transform to the transition */
+}
+
+.suggested-question:hover {
+  background-color: #e0e0e0;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* 3. Add a box shadow */
+  transform: scale(1.05); /* 5. Slightly scale the element */
+}
+
+.suggested-question:hover {
+  box-shadow: 0 px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.icon-button {
+  font-size: 2.5rem;
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  outline: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer; /* Optional: to indicate it's clickable */
+}
+
+.suggested-question-title {
+  font-size: 12px; /* Adjust as needed */
+  padding-right: 8px;
+  opacity: 0.7;
+  font-family:'SFUIText';
+  font-weight: 600; /* Slight transparency for subtlety */
+}
+
+.send-button {
+  font-family: 'SFUIText';
+  font-size: 14px !important;
+  padding: 10px 12px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 50%; /* Square-ish rounded edges */
+  outline: none;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+  /* Add a subtle shadow */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: white; /* Assuming the text color inside the button is white */
+}
+
+.send-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.2;
+}
+
+/* Hover effect: Add shine and enhance the shadow */
+.send-button:hover {/* Slightly brighter gradient for shine */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Active (click) effect: Depress the shadow */
+.send-button:active {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Lighter shadow for a pressed effect */
+}

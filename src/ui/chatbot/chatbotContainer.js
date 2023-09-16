@@ -43,7 +43,7 @@ const aiAgentNames = [
 ];
 
 const agentName = aiAgentNames[Math.floor(Math.random() * aiAgentNames.length)];
-const ChatbotContainer = (sessionID) => {
+const ChatbotContainer = (sessionID="") => {
   const dispatch = useDispatch();
   const isGettingAnswer = useSelector((state) => state.chat.isGettingAnswer);
   const messages = useSelector((state) => state.chat.messages);

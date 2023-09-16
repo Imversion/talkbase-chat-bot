@@ -1,17 +1,17 @@
 import React from "react";
 import ReactMarkdown from "react-markdown";
 import gfm from "remark-gfm";
-import { CSSTransition } from "react-transition-group";
+// import { CSSTransition } from "react-transition-group";
 import "./chatBubble.css"; // Import the CSS for animations
 
 const ChatBubble = ({ message, theme, index , agentName }) => {
   return (
-    <CSSTransition
-      in={true} // Always true for this use case
-      timeout={300} // Duration of animation in milliseconds
-      classNames="chat-bubble-animation"
-      appear
-    >
+    // <CSSTransition
+    //   in={true} // Always true for this use case
+    //   timeout={300} // Duration of animation in milliseconds
+    //   classNames="chat-bubble-animation"
+    //   appear
+    // >
       <div
         className={
           message.messageKind === "user"
@@ -50,7 +50,7 @@ const ChatBubble = ({ message, theme, index , agentName }) => {
           {message.messageKind === "user" ? "You" : agentName}
         </span>
       </div>
-    </CSSTransition>
+    // </CSSTransition>
   );
 };
 
